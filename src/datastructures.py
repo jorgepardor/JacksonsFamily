@@ -26,8 +26,8 @@ class FamilyStructure:
             "age": 35,
             "lucky_numbers": [10,14,3]},
             
-            {"id": self._generateId(),
-            "first_name": "Jimmy",
+            {"id": 7,
+            "first_name": "Tommy",
             "last_name": last_name,
             "age": 5,
             "lucky_numbers": [1]}
@@ -38,7 +38,7 @@ class FamilyStructure:
         return randint(0, 99999999)
 
     def add_member(self, member):
-        member ['id'] = self._generateId()
+        # member ['id'] = self._generateId()
         if ('first_name' in member and 'age' in member and 'lucky_numbers' in member):
             self._members.append(member)
             return 'added'
@@ -50,7 +50,7 @@ class FamilyStructure:
             print(member)
             if id == member['id']:
                 self._members.pop(idx)
-                return "deleted"
+                return {"done": True}
         return "not found"
 
     def get_member(self, id):
